@@ -1,0 +1,29 @@
+import {footerLinks} from "./constants/index.js";
+
+const Footer = () => {
+    return (
+        <footer>
+            <div className="info">
+                <p>More ways to shop: Find an Apple Store or other retailer near you. Or call 000800 040 1966.</p>
+                <img src="/logo.svg" alt ="Apple logo"/>
+            </div>
+
+            <hr />
+
+            <div className="links">
+                <div className="text-center text-sm text-gray-400 mt-8">
+                    &copy; {new Date().getFullYear()} Apple Inc. All rights reserved..
+                </div>
+
+                <ul>
+                    {footerLinks.map(({label, link }) => (
+                        <li key={label}>
+                            <a href={link}>{label}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </footer>
+    )
+}
+export default Footer
